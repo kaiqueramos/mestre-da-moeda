@@ -104,9 +104,9 @@ export default function Footer({ copyrightText }) {
               <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Termos de Uso</a>
             </Link>
           </li>
-          <li className={styles.listItem}>
+          <li>
             <Link href="/declaracao-de-afiliados">
-              <a className={styles.link}>Declaração de Afiliados</a>
+              <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Declaração de Afiliados</a>
             </Link>
           </li>
         </ul>
