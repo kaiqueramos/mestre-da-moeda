@@ -82,26 +82,26 @@ const ThemeSwitcher = () => {
 export default function Footer({ copyrightText }) {
   return (
     <footer className="flex flex-col items-center py-16">
-      <nav>
-        <ul className={styles.list}> {/* Adicione uma classe à lista */}
-          <li className={styles.listItem}> {/* Adicione uma classe aos itens da lista */}
+      <nav className="mb-4">
+        <ul className="flex flex-wrap justify-center space-x-6">
+          <li>
             <Link href="/sobre-nos">
-              <a className={styles.link}>Sobre Nós</a> {/* Adicione uma classe aos links */}
+              <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Sobre Nós</a>
             </Link>
           </li>
-          <li className={styles.listItem}>
+          <li>
             <Link href="/contato">
-              <a className={styles.link}>Contato</a>
+              <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Contato</a>
             </Link>
           </li>
-          <li className={styles.listItem}>
+          <li>
             <Link href="/politica-de-privacidade">
-              <a className={styles.link}>Política de Privacidade</a>
+              <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Política de Privacidade</a>
             </Link>
           </li>
-          <li className={styles.listItem}>
+          <li>
             <Link href="/termos-de-uso">
-              <a className={styles.link}>Termos de Uso</a>
+              <a className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">Termos de Uso</a>
             </Link>
           </li>
           <li className={styles.listItem}>

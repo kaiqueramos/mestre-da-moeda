@@ -1,12 +1,11 @@
 import React from 'react';
-import styles from '../styles/DeclaracaoAfiliados.module.css'; // Importe o CSS Module
 
 function DeclaracaoAfiliados() {
     return (
-        <div className={styles.container}>
-            <h1 className={styles.title}>Declaração de Afiliados</h1>
-            <p className={styles.content}>
-                Esta declaração divulga nossa relação de afiliados com outros sites... (adicione o conteúdo da declaração de afiliados aqui)
+        <div className="container mx-auto px-4 py-8 dark:bg-gray-900">
+            <h1 className="text-2xl font-bold mb-4 dark:text-white">Declaração de Afiliados</h1>
+            <p className="mb-4 dark:text-gray-300">
+                Esta declaração divulga nossa relação de afiliados com outros sites.
             </p>
         </div>
     );
