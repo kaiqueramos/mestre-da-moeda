@@ -80,6 +80,35 @@ const ThemeSwitcher = () => {
 export default function Footer({ copyrightText }) {
   return (
     <footer className="flex flex-col items-center py-16">
+      <nav>
+        <ul className={styles.list}> {/* Adicione uma classe à lista */}
+          <li className={styles.listItem}> {/* Adicione uma classe aos itens da lista */}
+            <Link href="/sobre-nos">
+              <a className={styles.link}>Sobre Nós</a> {/* Adicione uma classe aos links */}
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/contato">
+              <a className={styles.link}>Contato</a>
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/politica-de-privacidade">
+              <a className={styles.link}>Política de Privacidade</a>
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/termos-de-uso">
+              <a className={styles.link}>Termos de Uso</a>
+            </Link>
+          </li>
+          <li className={styles.listItem}>
+            <Link href="/declaracao-de-afiliados">
+              <a className={styles.link}>Declaração de Afiliados</a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
       <p className="mb-3 font-bold uppercase dark:text-white opacity-60">
         {copyrightText}
       </p>
