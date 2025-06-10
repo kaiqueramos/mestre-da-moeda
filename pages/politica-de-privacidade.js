@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 function PoliticaPrivacidade() {
     return (
@@ -135,8 +136,8 @@ function PoliticaPrivacidade() {
             </p>
 
             <ul className="list-disc pl-5 mb-4 dark:text-gray-300">
-                <li>Por e-mail: <a href="mailto:kaiqueramosalt@gmail.com" className="text-blue-500 hover:underline">kaiqueramosalt@gmail.com</a></li>
-                <li>Visitando esta página em nosso site: <a href="/contato" className="text-blue-500 hover:underline">/contato</a></li>
+                <li>Por e-mail: <Link href="mailto:kaiqueramosalt@gmail.com" className="text-blue-500 hover:underline">kaiqueramosalt@gmail.com</Link></li>
+                <li>Visitando esta página em nosso site: <Link href="/contato/" className="text-blue-500 hover:underline">contato</Link></li>
             </ul>
 
             <p className="dark:text-gray-300">

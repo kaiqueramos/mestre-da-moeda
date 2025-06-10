@@ -26,7 +26,7 @@ function TermosDeUso() {
 
             <h2 className="text-xl font-semibold mb-2 dark:text-white">4. Limitação de Responsabilidade</h2>
             <p className="mb-4 dark:text-gray-300">
-                Nosso site e todo o conteúdo, materiais, informações, software, produtos e serviços fornecidos no site são fornecidos "como estão" e "conforme disponíveis". Não fazemos representações ou garantias de qualquer tipo, expressas ou implícitas, quanto à operação do site ou às informações, conteúdo, materiais, software, produtos ou serviços incluídos no site.
+                Nosso site e todo o conteúdo, materiais, informações, software, produtos e serviços fornecidos no site são fornecidos como estão e conforme disponíveis. Não fazemos representações ou garantias de qualquer tipo, expressas ou implícitas, quanto à operação do site ou às informações, conteúdo, materiais, software, produtos ou serviços incluídos no site.
             </p>
 
             <h2 className="text-xl font-semibold mb-2 dark:text-white">5. Alterações nos Termos de Uso</h2>
