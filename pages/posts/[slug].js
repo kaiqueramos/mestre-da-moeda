@@ -44,6 +44,11 @@ export default function PostPage({
         title={`${frontMatter.title} - ${globalData.name}`}
         description={frontMatter.description}
         keywords={frontMatter.keywords || globalData.keywords}
+        robots={globalData.robotsTag}
+        canonicalUrl={`${globalData.canonicalUrl}/posts/${slug}`}
+        author={globalData.author}
+        publisher={globalData.publisher}
+        lang={globalData.lang}
       />
       <Header name={globalData.name} />
       <article className="px-6 md:px-0" data-sb-object-id={`posts/${slug}.mdx`}>
