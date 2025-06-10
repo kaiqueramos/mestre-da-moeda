@@ -94,10 +94,15 @@ export const getGlobalData = () => {
     ? decodeURI(process.env.BLOG_TITLE)
     : phrases[Math.floor(Math.random() * phrases.length)];
 
+  const keywords = process.env.BLOG_KEYWORDS
+    ? decodeURI(process.env.BLOG_KEYWORDS)
+    : 'finanças, investimentos, economia, dinheiro, mestre da moeda';
+
   return {
     name,
     blogTitle,
     footerText,
+    keywords,
   };
 };
 

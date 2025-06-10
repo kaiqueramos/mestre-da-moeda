@@ -43,6 +43,7 @@ export default function PostPage({
       <SEO
         title={`${frontMatter.title} - ${globalData.name}`}
         description={frontMatter.description}
+        keywords={frontMatter.keywords || globalData.keywords}
       />
       <Header name={globalData.name} />
       <article className="px-6 md:px-0" data-sb-object-id={`posts/${slug}.mdx`}>
