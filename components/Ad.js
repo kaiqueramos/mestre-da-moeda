@@ -1,5 +1,5 @@
-function Ad({ slot }) {
-  const adsense = `
+export default function Ad({ slot }) {
+    const adsense = `
     <div>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370891496054049"
        crossorigin="anonymous"></script>
@@ -15,7 +15,10 @@ function Ad({ slot }) {
     </div>
   `;
 
-  return (
-    <div className="my-4" dangerouslySetInnerHTML={{ __html: adsense }} />
-  );
+    return (
+        <div className="my-4" dangerouslySetInnerHTML={{ __html: adsense }} />
+    );
 }
+Ad.defaultProps = {
+    slot: '6922916787', // Default ad slot
+};
