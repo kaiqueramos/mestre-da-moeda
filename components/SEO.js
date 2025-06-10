@@ -11,7 +11,7 @@ export default function SEO({ title, description, keywords, robots, canonicalUrl
       <meta property='canonical' content={canonicalUrl} />
       <meta property='author' content={author} />
       <meta property='publisher' content={publisher} />
-      <meta property='language' content={lang} />
+      <meta property='lang' content={lang} />
     </Head>
   );
 }
