@@ -50,6 +50,20 @@ export default function PostPage({
         publisher={globalData.publisher}
         lang={globalData.lang}
       />
+      {/* Google Ads Snippet - Adjust styles as needed */}
+      <div className="my-4"> {/* Added a wrapper div for styling */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370891496054049" crossOrigin="anonymous"></script>
+        {/* Bloco1 */}
+        <ins className="adsbygoogle"
+          style={{ display: "block" }} // Use inline styles for React compatibility
+          data-ad-client="ca-pub-7370891496054049"
+          data-ad-slot="3749958530"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`} {/* Template literal for the script content */}
+        </script>
+      </div>
       <Header name={globalData.name} />
       <article className="px-6 md:px-0" data-sb-object-id={`posts/${slug}.mdx`}>
         <header>
@@ -113,6 +127,20 @@ export default function PostPage({
         variant="small"
         className="absolute bottom-0 opacity-20 dark:opacity-10"
       />
+      <div className="my-4">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370891496054049"
+          crossOrigin="anonymous"></script>
+        {/* Bloco2 */}
+        <ins className="adsbygoogle"
+          style={{ display: "block" }}
+        data-ad-client="ca-pub-7370891496054049"
+        data-ad-slot="8619141837"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </script>
+      </div>
     </Layout>
   );
 }
@@ -147,3 +175,4 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
+
