@@ -5,7 +5,7 @@ function Contato() {
         <div className="container mx-auto px-4 py-8 dark:bg-gray-900">
             <h1 className="text-2xl font-bold mb-4 dark:text-white">Contato</h1>
             <p className="mb-4 dark:text-gray-300">
-                Entre em contato conosco através do formulário abaixo ou pelo e-mail...
+                Entre em contato comigo pelo e-mail: <a href="mailto:kaiqueramosalt@gmail.com" className="text-blue-500 hover:underline">kaiqueramosalt@gmail.com</a>
             </p>
             {/* Adicione um formulário de contato aqui, se necessário
              <form>
