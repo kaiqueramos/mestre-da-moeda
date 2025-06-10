@@ -12,6 +12,7 @@ export default function SEO({ title, description, keywords, robots, canonicalUrl
       <meta property='author' content={author} />
       <meta property='publisher' content={publisher} />
       <meta property='lang' content={lang} />
+      <meta name="google-adsense-account" content="ca-pub-7370891496054049" />
     </Head>
   );
 }
