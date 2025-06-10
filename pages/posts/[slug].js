@@ -16,6 +16,7 @@ import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
+import Ad from '../../components/Ad';
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -28,6 +29,7 @@ const components = {
   // See the notes in README.md for more details.
   Head,
   img: CustomImage,
+  Ad,
 };
 
 export default function PostPage({
@@ -128,18 +130,18 @@ export default function PostPage({
         className="absolute bottom-0 opacity-20 dark:opacity-10"
       />
       <div className="my-4">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370891496054049"
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7370891496054049"
           crossOrigin="anonymous"></script>
         {/* Bloco2 */}
         <ins className="adsbygoogle"
           style={{ display: "block" }}
-        data-ad-client="ca-pub-7370891496054049"
-        data-ad-slot="8619141837"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>
+          data-ad-client="ca-pub-7370891496054049"
+          data-ad-slot="8619141837"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+        <script>
           {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </script>
+        </script>
       </div>
     </Layout>
   );
