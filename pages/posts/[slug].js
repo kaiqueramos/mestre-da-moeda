@@ -17,6 +17,7 @@ import Header from '../../components/Header';
 import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
 import Ad from '../../components/Ad';
+import Autor from '../../components/Autor'; // Importando o componente Autor
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -88,6 +89,7 @@ export default function PostPage({
           >
             <MDXRemote {...source} components={components} />
           </article>
+          <Autor /> {/* Adicionando o componente Autor aqui */}
         </main>
         <div className="grid mt-12 md:grid-cols-2 lg:-mx-24">
           {prevPost && (

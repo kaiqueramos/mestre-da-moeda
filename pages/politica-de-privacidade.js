@@ -44,6 +44,31 @@ function PoliticaPrivacidade() {
                 <li>Para cumprir as leis e regulamentos aplicáveis.</li>
             </ul>
 
+            <h2 className="text-xl font-semibold mb-2 dark:text-white">Publicidade e Cookies de Terceiros</h2>
+
+            <p className="mb-4 dark:text-gray-300">
+                Nosso site exibe anúncios fornecidos pelo Google AdSense e pode usar cookies para personalizar a publicidade que você vê.
+            </p>
+
+            <ul className="list-disc pl-5 mb-4 dark:text-gray-300">
+                <li>
+                    Fornecedores de terceiros, incluindo o Google, usam cookies para veicular anúncios com base nas visitas anteriores de um usuário ao nosso site ou a outros sites.
+                </li>
+                <li>
+                    O uso de cookies de publicidade pelo Google permite que ele e seus parceiros veiculem anúncios para nossos usuários com base em sua visita ao nosso site e/ou a outros sites na Internet.
+                </li>
+                <li>
+                    Você pode desativar a publicidade personalizada visitando a página de <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">Configurações de anúncios do Google</a>.
+                </li>
+                <li>
+                    Como alternativa, você pode desativar o uso de cookies de um fornecedor de terceiros para publicidade personalizada visitando o site <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">www.aboutads.info/choices</a>.
+                </li>
+            </ul>
+
+            <p className="mb-4 dark:text-gray-300">
+                Para mais informações sobre como o Google utiliza os dados, consulte a <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">página de políticas do Google</a>.
+            </p>
+
             <h2 className="text-xl font-semibold mb-2 dark:text-white">Compartilhamento de Suas Informações</h2>
 
             <p className="mb-4 dark:text-gray-300">
