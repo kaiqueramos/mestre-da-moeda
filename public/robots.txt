@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.seusite.com/sitemap.xml
+Sitemap: https://mestredamoeda.netlify.app/sitemap.xml

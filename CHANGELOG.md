@@ -46,3 +46,15 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
 -   **Arquivo Modificado:** `TEMPLATE_POST.mdx`
 -   **Alteração:** O template foi aprimorado para funcionar como um "prompt" sofisticado, com comentários detalhados e exemplos que guiam o autor a criar conteúdo de alto valor, focado em E-E-A-T, sem a necessidade de marcadores explícitos como `[SUA VEZ]`.
 -   **Motivo:** Fornecer uma ferramenta eficaz para a criação consistente de conteúdo de alta qualidade, que atenda às expectativas do Google para aprovação no AdSense e bom posicionamento em SEO.
+
+### 7. Criação de Novos Posts com Foco em E-E-A-T e SEO
+
+-   **Arquivos Criados:** 
+    - `posts/7-investimentos-iniciantes.mdx`
+    - `posts/8-renda-extra.mdx`
+    - `posts/9-reserva-emergencia.mdx`
+    - `posts/10-como-sair-do-aluguel.mdx`
+    - `posts/11-planejamento-financeiro-pessoal.mdx`
+    - `posts/12-fundos-imobiliarios-fiis.mdx`
+-   **Alteração:** Geração de 6 novos artigos, seguindo a estrutura do `TEMPLATE_POST.mdx` e incorporando uma linguagem que simula experiência e autoridade, visando aprimorar o E-E-A-T e o SEO do blog.
+-   **Motivo:** Aumentar o volume de conteúdo de alta qualidade e relevância, fator crucial para a aprovação no Google AdSense e para o ranqueamento orgânico nas buscas.

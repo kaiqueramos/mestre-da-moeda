@@ -52,6 +52,10 @@ export default function PostPage({
         author={globalData.author}
         publisher={globalData.publisher}
         lang={globalData.lang}
+        datePublished={frontMatter.date}
+        dateModified={frontMatter.date}
+        imageUrl={`${globalData.canonicalUrl}/nextjs-blog-theme-preview.png`} // Usando imagem padrão como fallback
+        articleSection={frontMatter.category}
       />
       {/* Google Ads Snippet - Adjust styles as needed */}
       <div className="my-4"> {/* Added a wrapper div for styling */}
