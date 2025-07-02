@@ -57,7 +57,7 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
     - `posts/11-planejamento-financeiro-pessoal.mdx`
     - `posts/12-fundos-imobiliarios-fiis.mdx`
     - `posts/13-cartao-de-credito.mdx`
-    - `posts/14-educacao-financera-criancas.mdx`
+    - `posts/14-educacao-financeira-criancas.mdx`
     - `posts/15-como-investir-em-acoes.mdx`
     - `posts/16-como-sair-do-aluguel-revisado.mdx`
     - `posts/17-como-fazer-orcamento-pessoal-revisado.mdx`
@@ -75,3 +75,25 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
 -   **Arquivo Modificado:** `TEMPLATE_POST.mdx`
 -   **Alteração:** Adicionada uma instrução clara no campo `title` do frontmatter, orientando a usar aspas duplas caso o título contenha dois pontos (`:`), para evitar erros de parsing YAML.
 -   **Motivo:** Prevenir erros comuns na criação de novos posts e garantir a correta interpretação dos metadados pelo sistema.
+
+### 10. Geração de Novos Posts (Rodada Final)
+
+-   **Arquivos Criados:** 
+    - `posts/18-investir-criptomoedas.mdx`
+    - `posts/19-como-sair-do-aluguel-revisado-2.mdx`
+    - `posts/20-como-fazer-orcamento-pessoal-revisado-2.mdx`
+    - `posts/21-como-escolher-cartao-de-credito.mdx`
+    - `posts/22-como-fazer-orcamento-pessoal-revisado-3.mdx`
+    - `posts/23-como-fazer-orcamento-pessoal-revisado-4.mdx`
+    - `posts/24-como-investir-em-renda-fixa.mdx`
+    - `posts/25-planejamento-viagem-inteligente.mdx`
+    - `posts/26-fundos-de-investimento.mdx`
+    - `posts/27-financas-casamento-vida-a-dois.mdx`
+-   **Alteração:** Geração de 10 novos artigos com temas variados, focando em conteúdo original, atemporal, sensacional e otimizado para SEO e E-E-A-T, seguindo as diretrizes do template.
+-   **Motivo:** Aumentar significativamente o volume e a diversidade do conteúdo de alta qualidade do blog, crucial para a aprovação no Google AdSense e para o ranqueamento orgânico nas buscas.
+
+### 11. Integração do Google Analytics 4
+
+-   **Arquivo Modificado:** `pages/_app.js`
+-   **Alteração:** Adicionado o script de integração do Google Analytics 4 (GA4) com o ID de medição fornecido (`G-FK7N3ZXJTL`).
+-   **Motivo:** Permitir o monitoramento do tráfego do site e do comportamento dos usuários, fornecendo dados essenciais para otimização de conteúdo e estratégias de marketing.
