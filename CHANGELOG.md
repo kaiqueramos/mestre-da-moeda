@@ -26,3 +26,23 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
 -   **Arquivo Criado:** `CHANGELOG.md`
 -   **Alteração:** Adicionados arquivos de documentação para guiar a configuração do formulário e para registrar as mudanças feitas no projeto.
 -   **Motivo:** Manter o projeto organizado e facilitar futuras manutenções.
+
+## Data: 2025-07-02
+
+### 4. Melhoria do Estilo do Header (Cabeçalho)
+
+-   **Arquivo Modificado:** `components/Header.js`
+-   **Alteração:** Reestruturação do layout do cabeçalho para separar o logo/nome do blog do menu de navegação, criando um design mais limpo e organizado com duas "linhas".
+-   **Motivo:** Melhorar a experiência do usuário (UX) e a clareza da navegação, fatores importantes para a avaliação do Google.
+
+### 5. Revisão e Preenchimento de Conteúdo dos Posts Existentes
+
+-   **Arquivos Modificados:** `posts/1-economizar-dinheiro-todo-mes.mdx`, `posts/2-sair-das-dividas.mdx`, `posts/3-montar-orcamento-familiar.mdx`, `posts/4-guia-independencia-financeira.mdx`, `posts/5-aposentadoria-tranquila.mdx`, `posts/6-tesouro-direto-completo.mdx`
+-   **Alteração:** Todos os posts existentes foram reestruturados e os trechos que antes eram marcadores `[SUA VEZ]` foram preenchidos com conteúdo que emula experiência e insights, visando o E-E-A-T.
+-   **Motivo:** Aumentar a qualidade, profundidade e originalidade percebida do conteúdo, crucial para a aprovação no Google AdSense e para o ranqueamento nas buscas.
+
+### 6. Atualização do Template de Posts para Geração de Conteúdo de Valor
+
+-   **Arquivo Modificado:** `TEMPLATE_POST.mdx`
+-   **Alteração:** O template foi aprimorado para funcionar como um "prompt" sofisticado, com comentários detalhados e exemplos que guiam o autor a criar conteúdo de alto valor, focado em E-E-A-T, sem a necessidade de marcadores explícitos como `[SUA VEZ]`.
+-   **Motivo:** Fornecer uma ferramenta eficaz para a criação consistente de conteúdo de alta qualidade, que atenda às expectativas do Google para aprovação no AdSense e bom posicionamento em SEO.
