@@ -97,3 +97,9 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
 -   **Arquivo Modificado:** `pages/_app.js`
 -   **Alteração:** Adicionado o script de integração do Google Analytics 4 (GA4) com o ID de medição fornecido (`G-FK7N3ZXJTL`).
 -   **Motivo:** Permitir o monitoramento do tráfego do site e do comportamento dos usuários, fornecendo dados essenciais para otimização de conteúdo e estratégias de marketing.
+
+### 12. Implementação de "Carregar Mais Posts" na Página Inicial
+
+-   **Arquivo Modificado:** `pages/index.js`
+-   **Alteração:** Adicionada funcionalidade de carregamento de posts sob demanda, exibindo inicialmente 10 posts e carregando mais 10 a cada clique no botão "Carregar Mais Posts".
+-   **Motivo:** Melhorar a performance da página inicial, otimizando o carregamento de conteúdo e a experiência do usuário, especialmente com o aumento do volume de posts.
