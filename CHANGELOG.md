@@ -56,5 +56,22 @@ Este arquivo documenta as alterações realizadas no blog com o objetivo de melh
     - `posts/10-como-sair-do-aluguel.mdx`
     - `posts/11-planejamento-financeiro-pessoal.mdx`
     - `posts/12-fundos-imobiliarios-fiis.mdx`
--   **Alteração:** Geração de 6 novos artigos, seguindo a estrutura do `TEMPLATE_POST.mdx` e incorporando uma linguagem que simula experiência e autoridade, visando aprimorar o E-E-A-T e o SEO do blog.
+    - `posts/13-cartao-de-credito.mdx`
+    - `posts/14-educacao-financera-criancas.mdx`
+    - `posts/15-como-investir-em-acoes.mdx`
+    - `posts/16-como-sair-do-aluguel-revisado.mdx`
+    - `posts/17-como-fazer-orcamento-pessoal-revisado.mdx`
+-   **Alteração:** Geração de 5 novos artigos, seguindo a estrutura do `TEMPLATE_POST.mdx` e incorporando uma linguagem que simula experiência e autoridade, visando aprimorar o E-E-A-T e o SEO do blog.
 -   **Motivo:** Aumentar o volume de conteúdo de alta qualidade e relevância, fator crucial para a aprovação no Google AdSense e para o ranqueamento orgânico nas buscas.
+
+### 8. Correção de Exibição de Posts (Filtro por Data)
+
+-   **Arquivo Modificado:** `utils/mdx-utils.js`
+-   **Alteração:** Adicionado um filtro na função `getPosts` para garantir que apenas artigos com data de publicação igual ou anterior à data atual sejam exibidos.
+-   **Motivo:** Resolver o problema de posts com datas futuras não aparecerem no site, garantindo que apenas conteúdo relevante e publicado seja visível para os usuários e para os rastreadores do Google.
+
+### 9. Instrução para Títulos com Dois Pontos no Frontmatter
+
+-   **Arquivo Modificado:** `TEMPLATE_POST.mdx`
+-   **Alteração:** Adicionada uma instrução clara no campo `title` do frontmatter, orientando a usar aspas duplas caso o título contenha dois pontos (`:`), para evitar erros de parsing YAML.
+-   **Motivo:** Prevenir erros comuns na criação de novos posts e garantir a correta interpretação dos metadados pelo sistema.
