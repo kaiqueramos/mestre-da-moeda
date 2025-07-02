@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { getPosts } from '../utils/mdx-utils';
+import { useState } from 'react'; // Import useState
 
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -8,7 +9,15 @@ import ArrowIcon from '../components/ArrowIcon';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
+const POSTS_PER_PAGE = 10; // Define how many posts to load initially and per click
+
 export default function Index({ posts, globalData }) {
+  const [visiblePosts, setVisiblePosts] = useState(POSTS_PER_PAGE);
+
+  const handleLoadMore = () => {
+    setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + POSTS_PER_PAGE);
+  };
+
   return (
     <Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} keywords={globalData.keywords} robots={globalData.robotsTag} canonicalUrl={globalData.canonicalUrl} author={globalData.author} publisher={globalData.publisher} lang={globalData.lang} />
@@ -18,7 +27,7 @@ export default function Index({ posts, globalData }) {
           {globalData.blogTitle}
         </h1>
         <ul className="w-full">
-          {posts.map((post) => (
+          {posts.slice(0, visiblePosts).map((post) => (
             <li
               key={post.filePath}
               className="transition border border-b-0 bg-white/10 border-gray-800/10 md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg dark:bg-black/30 hover:bg-white/20 dark:hover:bg-black/50 dark:border-white/10 last:border-b"
@@ -61,6 +70,16 @@ export default function Index({ posts, globalData }) {
             </li>
           ))}
         </ul>
+        {visiblePosts < posts.length && (
+          <div className="text-center mt-8">
+            <button
+              onClick={handleLoadMore}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg"
+            >
+              Carregar Mais Posts
+            </button>
+          </div>
+        )}
       </main>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
