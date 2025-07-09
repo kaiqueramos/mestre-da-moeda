@@ -143,7 +143,7 @@ export default function PostPage({
         </header>
         <main>
           {tableOfContents.length > 0 && (
-            <nav className="mb-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+            <nav style={{ border: '5px solid red', padding: '20px', backgroundColor: 'yellow', zIndex: 9999, position: 'relative' }} className="mb-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
               <h3 className="text-lg font-bold mb-2 dark:text-white">Neste Artigo:</h3>
               <ul className="list-disc list-inside ml-4">
                 {tableOfContents.map((item) => (
