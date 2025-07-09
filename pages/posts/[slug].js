@@ -4,6 +4,7 @@ import {
   getPostBySlug,
   getPreviousPostBySlug,
   getPostFilePaths,
+  getPosts, // Import getPosts
 } from '../../utils/mdx-utils';
 
 import { MDXRemote } from 'next-mdx-remote';
@@ -41,6 +42,7 @@ export default function PostPage({
   nextPost,
   globalData,
   slug,
+  relatedPosts, // Add relatedPosts prop
 }) {
   const router = useRouter();
 
@@ -145,6 +147,25 @@ export default function PostPage({
           </article>
           <Autor /> {/* Adicionando o componente Autor aqui */}
         </main>
+        {relatedPosts.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-2xl font-bold mb-6 dark:text-white">Posts Relacionados</h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedPosts.map((post) => (
+                <li key={post.filePath}>
+                  <Link href={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}>
+                    <a className="block p-6 border border-gray-800/10 rounded-lg hover:bg-white/20 dark:hover:bg-black/50 transition-colors duration-200">
+                      <h3 className="text-xl font-semibold dark:text-white mb-2">{post.data.title}</h3>
+                      {post.data.description && (
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">{post.data.description}</p>
+                      )}
+                    </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
         <div className="grid mt-12 md:grid-cols-2 lg:-mx-24">
           {prevPost && (
             <Link
@@ -206,6 +227,15 @@ export default function PostPage({
 export const getStaticProps = async ({ params }) => {
   const globalData = getGlobalData();
   const { mdxSource, data } = await getPostBySlug(params.slug);
+  const allPosts = getPosts(); // Fetch all posts
+
+  // Filter related posts by category, excluding the current post
+  const relatedPosts = allPosts.filter(
+    (post) =>
+      post.data.category === data.category &&
+      post.filePath !== `${params.slug}.mdx`
+  ).slice(0, 4); // Limit to 4 related posts
+
   const prevPost = getPreviousPostBySlug(params.slug);
   const nextPost = getNextPostBySlug(params.slug);
 
@@ -217,6 +247,7 @@ export const getStaticProps = async ({ params }) => {
       slug: params.slug,
       prevPost,
       nextPost,
+      relatedPosts, // Pass relatedPosts as a prop
     },
   };
 };
