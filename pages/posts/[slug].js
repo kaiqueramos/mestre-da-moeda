@@ -1,4 +1,6 @@
 import { getGlobalData } from '../../utils/global-data';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import {
   getNextPostBySlug,
   getPostBySlug,
