@@ -22,6 +22,7 @@ import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
 import Ad from '../../components/Ad';
 import Autor from '../../components/Autor'; // Importando o componente Autor
+import Comentarios from '../../components/Comentarios'; // Importando o componente Comentarios
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -215,6 +216,7 @@ export default function PostPage({
             </Link>
           )}
         </div>
+        <Comentarios />
       </article>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
