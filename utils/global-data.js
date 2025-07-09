@@ -100,7 +100,7 @@ export const getGlobalData = () => {
 
   const canonicalUrl = process.env.CANONICAL_URL
     ? decodeURI(process.env.CANONICAL_URL)
-    : 'https://mestre-da-moeda.com';
+    : 'https://mestredamoeda.netlify.app/';
 
   const robotsTag = process.env.ROBOTS_TAG
     ? decodeURI(process.env.ROBOTS_TAG)
