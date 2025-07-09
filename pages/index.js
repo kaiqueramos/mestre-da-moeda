@@ -18,9 +18,27 @@ export default function Index({ posts, globalData }) {
     setVisiblePosts((prevVisiblePosts) => prevVisiblePosts + POSTS_PER_PAGE);
   };
 
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    url: globalData.canonicalUrl,
+    name: globalData.name,
+    logo: `${globalData.canonicalUrl}/favicon.svg`,
+  };
+
   return (
     <Layout>
-      <SEO title={globalData.name} description={globalData.blogTitle} keywords={globalData.keywords} robots={globalData.robotsTag} canonicalUrl={globalData.canonicalUrl} author={globalData.author} publisher={globalData.publisher} lang={globalData.lang} />
+      <SEO
+        title={globalData.name}
+        description={globalData.blogTitle}
+        keywords={globalData.keywords}
+        robots={globalData.robotsTag}
+        canonicalUrl={globalData.canonicalUrl}
+        author={globalData.author}
+        publisher={globalData.publisher}
+        lang={globalData.lang}
+        schemaData={schemaData}
+      />
       <Header name={globalData.name} />
       <main className="w-full">
         <h1 className="mb-12 text-3xl text-center lg:text-5xl">

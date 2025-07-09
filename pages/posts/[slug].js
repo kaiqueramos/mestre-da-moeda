@@ -9,6 +9,7 @@ import {
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import ArrowIcon from '../../components/ArrowIcon';
 import CustomImage from '../../components/CustomImage';
 import CustomLink from '../../components/CustomLink';
@@ -41,6 +42,58 @@ export default function PostPage({
   globalData,
   slug,
 }) {
+  const router = useRouter();
+
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BlogPosting',
+        '@id': `${globalData.canonicalUrl}/posts/${slug}`,
+        mainEntityOfPage: `${globalData.canonicalUrl}/posts/${slug}`,
+        headline: frontMatter.title,
+        description: frontMatter.description,
+        image: `${globalData.canonicalUrl}/nextjs-blog-theme-preview.png`,
+        datePublished: new Date(frontMatter.date).toISOString(),
+        dateModified: new Date(frontMatter.date).toISOString(),
+        author: {
+          '@type': 'Person',
+          name: globalData.author,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: globalData.name,
+          logo: {
+            '@type': 'ImageObject',
+            url: `${globalData.canonicalUrl}/favicon.svg`,
+          },
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: globalData.canonicalUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: `${globalData.canonicalUrl}/blog`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: frontMatter.title,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <Layout>
       <SEO
@@ -52,10 +105,7 @@ export default function PostPage({
         author={globalData.author}
         publisher={globalData.publisher}
         lang={globalData.lang}
-        datePublished={frontMatter.date}
-        dateModified={frontMatter.date}
-        imageUrl={`${globalData.canonicalUrl}/nextjs-blog-theme-preview.png`} // Usando imagem padrão como fallback
-        articleSection={frontMatter.category}
+        schemaData={schemaData}
       />
       {/* Google Ads Snippet - Adjust styles as needed */}
       <div className="my-4"> {/* Added a wrapper div for styling */}

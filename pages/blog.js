@@ -9,6 +9,25 @@ import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
 export default function BlogPage({ posts, globalData }) {
+  const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: globalData.canonicalUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: `${globalData.canonicalUrl}/blog`,
+      },
+    ],
+  };
+
   return (
     <Layout>
       <SEO 
@@ -20,6 +39,7 @@ export default function BlogPage({ posts, globalData }) {
         author={globalData.author}
         publisher={globalData.publisher}
         lang={globalData.lang}
+        schemaData={schemaData}
       />
       <Header name={globalData.name} />
       <main className="w-full">
