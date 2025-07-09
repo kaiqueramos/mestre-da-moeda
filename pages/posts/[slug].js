@@ -43,6 +43,7 @@ export default function PostPage({
   globalData,
   slug,
   relatedPosts, // Add relatedPosts prop
+  tableOfContents, // Add tableOfContents prop
 }) {
   const router = useRouter();
 
@@ -139,6 +140,22 @@ export default function PostPage({
           )}
         </header>
         <main>
+          {tableOfContents.length > 0 && (
+            <nav className="mb-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+              <h3 className="text-lg font-bold mb-2 dark:text-white">Neste Artigo:</h3>
+              <ul className="list-disc list-inside ml-4">
+                {tableOfContents.map((item) => (
+                  <li key={item.url}>
+                    <Link href={item.url}>
+                      <a className="text-blue-600 hover:underline dark:text-blue-400">
+                        {item.text}
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
           <article
             className="prose dark:prose-invert"
             data-sb-field-path="markdown_content"
@@ -226,7 +243,18 @@ export default function PostPage({
 
 export const getStaticProps = async ({ params }) => {
   const globalData = getGlobalData();
-  const { mdxSource, data } = await getPostBySlug(params.slug);
+  const { mdxSource, data } = await getPostBySlug(params.slug, [
+    rehypeSlug,
+    rehypeAutolinkHeadings,
+  ]);
+
+  // Extract table of contents
+  const tableOfContents = mdxSource.compiledSource.match(/<h[2-3] id="([^"]+)">(.+?)<\/h[2-3]>/g)?.map(match => {
+    const id = match.match(/id="([^"]+)"/)[1];
+    const text = match.match(/>(.+?)</)[1];
+    return { url: `#${id}`, text };
+  }) || [];
+
   const allPosts = getPosts(); // Fetch all posts
 
   // Filter related posts by category, excluding the current post
@@ -248,6 +276,7 @@ export const getStaticProps = async ({ params }) => {
       prevPost,
       nextPost,
       relatedPosts, // Pass relatedPosts as a prop
+      tableOfContents, // Pass tableOfContents as a prop
     },
   };
 };
