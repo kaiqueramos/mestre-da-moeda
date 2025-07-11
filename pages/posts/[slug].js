@@ -6,8 +6,9 @@ import {
   getPostBySlug,
   getPreviousPostBySlug,
   getPostFilePaths,
-  getPosts, // Import getPosts
+  getPosts,
 } from '../../utils/mdx-utils';
+import { generateArticleSchema, generateBreadcrumbSchema } from '../../utils/schema-utils'; // Importar as novas funções
 
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
@@ -21,18 +22,11 @@ import Header from '../../components/Header';
 import Layout, { GradientBackground } from '../../components/Layout';
 import SEO from '../../components/SEO';
 import Ad from '../../components/Ad';
-import Autor from '../../components/Autor'; // Importando o componente Autor
-import Comentarios from '../../components/Comentarios'; // Importando o componente Comentarios
+import Autor from '../../components/Autor';
+import Comentarios from '../../components/Comentarios';
 
-// Custom components/renderers to pass to MDX.
-// Since the MDX files aren't loaded by webpack, they have no knowledge of how
-// to handle import statements. Instead, you must include components in scope
-// here.
 const components = {
   a: CustomLink,
-  // It also works with dynamically-imported components, which is especially
-  // useful for conditionally loading components for certain routes.
-  // See the notes in README.md for more details.
   Head,
   img: CustomImage,
   Ad,
@@ -45,59 +39,23 @@ export default function PostPage({
   nextPost,
   globalData,
   slug,
-  relatedPosts, // Add relatedPosts prop
-  tableOfContents, // Add tableOfContents prop
+  relatedPosts,
+  tableOfContents,
 }) {
   const router = useRouter();
 
+  const breadcrumbs = [
+    { name: 'Home', url: '/' },
+    { name: 'Blog', url: '/blog' },
+    { name: frontMatter.title, url: `/posts/${slug}` },
+  ];
+
+  const articleSchema = generateArticleSchema({ ...frontMatter, slug });
+  const breadcrumbSchema = generateBreadcrumbSchema(breadcrumbs);
+
   const schemaData = {
     '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'BlogPosting',
-        '@id': `${globalData.canonicalUrl}/posts/${slug}`,
-        mainEntityOfPage: `${globalData.canonicalUrl}/posts/${slug}`,
-        headline: frontMatter.title,
-        description: frontMatter.description,
-        image: `${globalData.canonicalUrl}/nextjs-blog-theme-preview.png`,
-        datePublished: new Date(frontMatter.date).toISOString(),
-        dateModified: new Date(frontMatter.date).toISOString(),
-        author: {
-          '@type': 'Person',
-          name: globalData.author,
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: globalData.name,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${globalData.canonicalUrl}/favicon.svg`,
-          },
-        },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            name: 'Home',
-            item: globalData.canonicalUrl,
-          },
-          {
-            '@type': 'ListItem',
-            position: 2,
-            name: 'Blog',
-            item: `${globalData.canonicalUrl}/blog`,
-          },
-          {
-            '@type': 'ListItem',
-            position: 3,
-            name: frontMatter.title,
-          },
-        ],
-      },
-    ],
+    '@graph': [articleSchema, breadcrumbSchema],
   };
 
   return (
